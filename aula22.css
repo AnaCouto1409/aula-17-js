@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: medium;
+  font-weight: 1rem;
+}
+/* mobile first - container flex vertical */
+.container {
+    color: #A0ACAD;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #33032f;
+    padding: 10px;
+  }
+  
+  aside {
+    background-color: #7e459b;
+    padding: 10px;
+  }
+  
+  main {
+    background-color: #a7abac;
+    color: #33032f;
+    padding: 10px;
+    background-image: url(file:///C:/Users/aninh/OneDrive/Imagens/Saved%20Pictures/logistica%20reversa.jpg.jpg);
+    flex: 1; /* abreviação grow */
+  }
+  /*o famoso mobile first- ser compatível no celular(mobile),notebook, tablet, tv de 40 polegadas etc*/
+  /* <meta name="viewport" content="width=device-width, initial-scale=1.0"> para trabalhar com media queries*/
+
+  div {
+    padding: 10px;
+  }
+  
+  footer {
+    background-color: #33032F;
+    padding: 10px;
+  }
+  
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: 401px)and (orientation:portrait){
+    .container{
+        display: grid;
+        grid-template: 
+        'header' 'header''header' 15vh
+        'aside' 'main' 'links' 75vh
+        'footer' 'footer' 'footer' 10vh
+        /150px 1fr 150px;
+        font-size: xx-large;
+        /*
+        grid-template-columns: 150px 1fr 150px;
+        grid-template-rows: 15vh 75vh 10vh;
+        grid-template-areas: 
+        'header' 'header''header' 15vh
+        'aside' 'main' 'links' 75vh
+        'footer' 'footer' 'footer' 10vh;*/
+    }
+    header{
+        grid-area: header;
+    }
+    aside{
+        grid-area: aside;
+    }
+    main{
+        grid-area: main;
+    }
+    footer{
+        grid-area: footer;
+    }
+    /*cartas na manga*/
+    @media (min-width:769px){
+        *{
+            font-size: larger;
+        }
+    }
+    @media screen and(min-width:1281px) {
+        
+    }
+  }
